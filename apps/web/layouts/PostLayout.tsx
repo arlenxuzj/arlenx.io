@@ -1,0 +1,125 @@
+import { Post } from 'contentlayer/generated';
+import { parseISO } from 'date-fns';
+import Head from 'next/head';
+import { Text } from 'ui/components';
+
+import { Box, Divider, Stack } from '@mui/material';
+
+import BlogMeta from '../components/Blog/BlogMeta';
+import BlogTags from '../components/Blog/BlogTags';
+import BlogTitle from '../components/Blog/BlogTitle';
+import Comment from '../components/Comment';
+import { ExternalLink } from '../components/Link';
+import BackHomeLink from '../components/Link/BackHomeLink';
+import { MDXStyledArticle } from '../components/MDX';
+import { Pill } from '../components/Pill';
+import TableOfContent, {
+  Heading
+} from '../components/TableOfContent/TableOfContent';
+import ContentWrapper from '../components/Wrapper/ContentWrapper';
+import { CommentConfig } from '../configs/commentConfig';
+import siteMeta from '../configs/siteMeta';
+import { POST_CONTENT_WIDTH } from '../constants';
+import { formatDate } from '../utils/date';
+
+export type PostLayoutProps = {
+  post: Post;
+  headings: Heading[];
+  commentConfig: Partial<CommentConfig>;
+  children: React.ReactNode;
+};
+
+const PostLayout = ({
+  post,
+  children,
+  headings,
+  commentConfig
+}: PostLayoutProps) => {
+  return (
+    <>
+      <Head>
+        <title>
+          {post.title ? `${post.title} | ${siteMeta.title}` : siteMeta.title}
+        </title>
+      </Head>
+      <ContentWrapper main contentWidth={POST_CONTENT_WIDTH}>
+        <Stack
+          gridColumn={1}
+          alignItems='flex-start'
+          sx={{
+            display: { xs: 'none', md: 'flex' }
+          }}
+        >
+          <TableOfContent headings={headings} />
+        </Stack>
+        <Stack gridColumn={2} alignItems='flex-start'>
+          <MDXStyledArticle>
+            <Stack
+              gap={2}
+              sx={{
+                width: '100%',
+                mb: 8
+              }}
+            >
+              <Stack direction='row' justifyContent='flex-start'>
+                <BackHomeLink />
+              </Stack>
+              <BlogTitle id={post.titleSlug} title={post.title} />
+              <BlogTags tags={post.tags} />
+              <BlogMeta
+                type='post'
+                slug={post.slug}
+                createdAt={post.createdAt}
+                readingTime={post.readingTime.text}
+              />
+              <Stack direction='row' gap={1} flexWrap='wrap'>
+                {post.updatedAt && (
+                  <Pill>{`Last Updated ${formatDate(
+                    parseISO(post.updatedAt)
+                  )}`}</Pill>
+                )}
+              </Stack>
+            </Stack>
+            {children}
+          </MDXStyledArticle>
+          <Box
+            sx={{
+              mt: 5,
+              width: '100%'
+            }}
+          >
+            <Divider />
+            <Stack
+              direction='row'
+              justifyContent='flex-end'
+              sx={{
+                py: 2
+              }}
+            >
+              <Text
+                size='xs'
+                color='text.secondary'
+                component={ExternalLink}
+                underline='none'
+                href={`${siteMeta.siteRepo}/blob/master/apps/web/contents/posts/${post.fileName}`}
+                sx={{
+                  borderBottom: '1px solid',
+                  borderColor: 'transparent',
+                  '&:hover': {
+                    color: 'text.primary',
+                    borderColor: 'text.primary'
+                  }
+                }}
+              >
+                View on GitHub
+              </Text>
+            </Stack>
+            <Comment commentConfig={commentConfig} />
+          </Box>
+        </Stack>
+      </ContentWrapper>
+    </>
+  );
+};
+
+export default PostLayout;

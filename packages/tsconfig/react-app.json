@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "React App",
+  "extends": "./base.json",
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react-jsx"
+  }
+}

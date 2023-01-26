@@ -1,0 +1,39 @@
+{
+  "name": "arlenx.io",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "build:web": "turbo run build --filter=web",
+    "build:design": "turbo run build --filter=design",
+    "dev": "turbo run dev --filter=web",
+    "lint": "turbo run lint",
+    "dev:design": "turbo run dev --filter=design",
+    "start:web": "turbo run start --filter=web",
+    "start:design": "turbo run start --filter=design",
+    "start": "npm run start:web",
+    "db:generate": "turbo db:generate",
+    "db:push": "turbo db:push",
+    "prepare": "is-ci || husky install",
+    "commit": "cz"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.4.2",
+    "@commitlint/config-conventional": "^17.4.2",
+    "@trivago/prettier-plugin-sort-imports": "^4.0.0",
+    "commitizen": "^4.2.6",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint-config-custom": "*",
+    "husky": "^8.0.0",
+    "is-ci": "^3.0.1",
+    "prettier": "^2.8.1",
+    "turbo": "latest"
+  },
+  "engines": {
+    "node": "16"
+  }
+}

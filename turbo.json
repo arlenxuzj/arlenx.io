@@ -1,0 +1,34 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalEnv": [
+    "WAKATIME_API_KEY",
+    "GITHUB_TOKEN",
+    "NODE_ENV",
+    "GISCUS_REPO",
+    "GISCUS_REPO_ID",
+    "GISCUS_CATEGORY",
+    "GISCUS_CATEGORY_ID",
+    "NEXT_PUBLIC_GOOGLE_ANALYTICS_ID",
+    "NEXT_PUBLIC_UMAMI_ID"
+  ],
+  "pipeline": {
+    "build": {
+      "dependsOn": ["^build", "^db:generate", "lint"],
+      "outputs": ["dist/**", ".next/**", "storybook-static/**"]
+    },
+    "lint": {},
+    "dev": {
+      "dependsOn": ["^db:generate"],
+      "cache": false
+    },
+    "db:generate": {
+      "cache": false
+    },
+    "db:push": {
+      "cache": false
+    },
+    "start": {
+      "dependsOn": ["^build"]
+    }
+  }
+}
