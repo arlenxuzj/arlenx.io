@@ -1,6 +1,15 @@
 const siteMeta = {
   title: "ArlenX's Blog",
   description: "ArlenX's Blog",
+  keywords: [
+    'React',
+    'TypeScript',
+    'JavaScript',
+    'Frontend',
+    'Backend',
+    'Web',
+    'Blog'
+  ],
   siteUrl: 'https://arlenx.io',
   siteRepo: 'https://github.com/arlenxuzj/arlenx.io',
   siteLogo: {
