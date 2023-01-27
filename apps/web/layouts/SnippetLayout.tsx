@@ -103,7 +103,7 @@ export const SnippetLayout = ({
                 color='text.secondary'
                 component={ExternalLink}
                 underline='none'
-                href={`${siteMeta.siteRepo}/blob/master/apps/web/contents/snippets/${snippet.fileName}`}
+                href={`${siteMeta.repo}/blob/master/apps/web/contents/snippets/${snippet.fileName}`}
                 sx={{
                   borderBottom: '1px solid',
                   borderColor: 'transparent',

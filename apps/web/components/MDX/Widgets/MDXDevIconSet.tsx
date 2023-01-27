@@ -1,7 +1,7 @@
 import { Stack, Tooltip } from '@mui/material';
 
-import { DevIconName, DevIcons, DevSvgIcon } from '../Icon';
-import { ExternalLink } from '../Link';
+import { DevIconName, DevIcons, DevSvgIcon } from '../../Icon';
+import { ExternalLink } from '../../Link';
 
 export type MDXDevIconSetProps = {
   names?: DevIconName[];

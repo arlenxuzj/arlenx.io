@@ -3,7 +3,7 @@ import { GetStaticProps, NextPage } from 'next';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 
 import { MDXComponents } from '../components/MDX';
-import MDXCodingStats from '../components/MDX/MDXCodingStats';
+import MDXCodingStats from '../components/MDX/Widgets/MDXCodingStats';
 import { DEFAULT_CONTENT_WIDTH, SCROLL_OFFSET } from '../constants';
 import useHashFragment from '../hooks/useHashFragment';
 import MDXPageLayout from '../layouts/MDXPageLayout';

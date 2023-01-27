@@ -101,7 +101,7 @@ const PostLayout = ({
                 color='text.secondary'
                 component={ExternalLink}
                 underline='none'
-                href={`${siteMeta.siteRepo}/blob/master/apps/web/contents/posts/${post.fileName}`}
+                href={`${siteMeta.repo}/blob/master/apps/web/contents/posts/${post.fileName}`}
                 sx={{
                   borderBottom: '1px solid',
                   borderColor: 'transparent',

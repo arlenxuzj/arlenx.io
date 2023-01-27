@@ -2,6 +2,8 @@ import React, { createContext, useEffect, useState } from 'react';
 
 import { useColorScheme, useMediaQuery } from '@mui/material';
 
+import siteMeta from '../configs/siteMeta';
+
 export type ThemeProviderProps = {
   children: React.ReactNode;
 };
@@ -23,20 +25,42 @@ const ThemeProvider = ({ children }: ThemeProviderProps) => {
   }, []);
 
   useEffect(() => {
+    const svgIconLink = document.querySelector<HTMLLinkElement>(
+      'link[type="image/svg+xml"][class="js-site-favicon"]'
+    );
+    const pngIconLink = document.querySelector<HTMLLinkElement>(
+      'link[type="image/png"][class="js-site-favicon"]'
+    );
+
+    if (prefersDarkMode) {
+      svgIconLink &&
+        svgIconLink.setAttribute('href', siteMeta.favicons.svg.dark);
+
+      pngIconLink &&
+        pngIconLink.setAttribute('href', siteMeta.favicons.png.dark);
+    } else {
+      svgIconLink &&
+        svgIconLink.setAttribute('href', siteMeta.favicons.svg.light);
+
+      pngIconLink &&
+        pngIconLink.setAttribute('href', siteMeta.favicons.png.light);
+    }
+
     if (mounted) {
-      const links =
-        document.querySelectorAll<HTMLLinkElement>('link[rel="icon"]');
-      console.log(links);
       if (prefersDarkMode) {
         setMode('dark');
-        links.forEach(link => {
-          link.href = '/logo-dark.png';
-        });
+        svgIconLink &&
+          svgIconLink.setAttribute('href', siteMeta.favicons.svg.dark);
+
+        pngIconLink &&
+          pngIconLink.setAttribute('href', siteMeta.favicons.png.dark);
       } else {
         setMode('light');
-        links.forEach(link => {
-          link.href = '/logo-light.png';
-        });
+        svgIconLink &&
+          svgIconLink.setAttribute('href', siteMeta.favicons.svg.light);
+
+        pngIconLink &&
+          pngIconLink.setAttribute('href', siteMeta.favicons.png.light);
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

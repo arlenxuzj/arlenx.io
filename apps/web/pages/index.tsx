@@ -33,7 +33,7 @@ export const getStaticProps: GetStaticProps<IndexPageProps> = async () => {
 };
 
 IndexPage.getLayout = page => {
-  return <DefaultLayout headTitle='Home'>{page}</DefaultLayout>;
+  return <DefaultLayout>{page}</DefaultLayout>;
 };
 
 export default IndexPage;

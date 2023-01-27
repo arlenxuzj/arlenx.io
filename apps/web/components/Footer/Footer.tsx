@@ -111,7 +111,7 @@ const Footer = () => {
                     color='text.disabled'
                     component={ExternalLink}
                     underline='none'
-                    href={siteMeta.siteRepo}
+                    href={siteMeta.repo}
                     sx={{
                       borderBottom: '1px solid',
                       borderColor: 'text.disabled',
