@@ -1,8 +1,8 @@
 import { Stack } from '@mui/material';
 
-import siteMeta from '../../configs/siteMeta';
-import { DevSvgIcon } from '../Icon';
-import { ExternalLink } from '../Link';
+import siteMeta from '../../../configs/siteMeta';
+import { DevSvgIcon } from '../../Icon';
+import { ExternalLink } from '../../Link';
 
 const MDXFindMe = () => {
   return (

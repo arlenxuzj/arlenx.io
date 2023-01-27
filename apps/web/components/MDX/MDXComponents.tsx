@@ -1,11 +1,9 @@
 import { MDXComponents as Components } from 'mdx/types';
 
-import MDXDevIconSet, { MDXDevIcon } from './MDXDevIconSet';
-import MDXFindMe from './MDXFindMe';
-import MDXBlockquote from './Widgets/MDXBlockquote';
-import MDXCallout from './Widgets/MDXCallout';
-import MDXCode from './Widgets/MDXCode';
-import { MDXHr } from './Widgets/MDXCommon';
+import MDXBlockquote from './Common/MDXBlockquote';
+import MDXCallout from './Common/MDXCallout';
+import MDXCode from './Common/MDXCode';
+import { MDXHr } from './Common/MDXCommon';
 import {
   MDXHeading1,
   MDXHeading2,
@@ -13,23 +11,25 @@ import {
   MDXHeading4,
   MDXHeading5,
   MDXHeading6
-} from './Widgets/MDXHeading';
-import MDXImage from './Widgets/MDXImage';
-import MDXLink from './Widgets/MDXLink';
+} from './Common/MDXHeading';
+import MDXImage from './Common/MDXImage';
+import MDXLink from './Common/MDXLink';
 import {
   MDXListItem,
   MDXOrderedList,
   MDXUnorderedList
-} from './Widgets/MDXList';
-import MDXParagraph from './Widgets/MDXParagraph';
-import MDXPre from './Widgets/MDXPre';
+} from './Common/MDXList';
+import MDXParagraph from './Common/MDXParagraph';
+import MDXPre from './Common/MDXPre';
 import {
   MDXTable,
   MDXTableBody,
   MDXTableCell,
   MDXTableHead,
   MDXTableRow
-} from './Widgets/MDXTable';
+} from './Common/MDXTable';
+import MDXDevIconSet, { MDXDevIcon } from './Widgets/MDXDevIconSet';
+import MDXFindMe from './Widgets/MDXFindMe';
 
 const MDXComponents: Components = {
   h1: MDXHeading1,

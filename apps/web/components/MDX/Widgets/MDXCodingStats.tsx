@@ -2,10 +2,10 @@ import { Text } from 'ui/components';
 
 import { Box } from '@mui/material';
 
-import { WakatimeAllTimeSinceToday } from '../../services/wakatime/all-time-since-today';
-import { WakatimeStats } from '../../services/wakatime/stats';
-import { parseWakaTimeText } from '../../utils/time';
-import BarChart from '../BarChart/BarChart';
+import { WakatimeAllTimeSinceToday } from '../../../services/wakatime/all-time-since-today';
+import { WakatimeStats } from '../../../services/wakatime/stats';
+import { parseWakaTimeText } from '../../../utils/time';
+import BarChart from '../../BarChart/BarChart';
 
 export type MDXCodingStatesProps = {
   wakatimeAllTimeSinceToday: WakatimeAllTimeSinceToday;
