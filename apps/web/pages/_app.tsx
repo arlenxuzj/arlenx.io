@@ -11,8 +11,9 @@ import { Experimental_CssVarsProvider as CssVarsProvider } from '@mui/material/s
 import type {} from '@mui/material/themeCssVarsAugmentation';
 
 import Analytics from '../components/Analytics';
-import LayoutWrapper from '../components/Wrapper/LayoutWrapper';
 // import '../lib/prism/treeview.css';
+import DefaultSEO from '../components/Seo/DefaultSeo';
+import LayoutWrapper from '../components/Wrapper/LayoutWrapper';
 import { ThemeProvider } from '../providers/ThemeProvider';
 import '../styles/font.css';
 import '../styles/global.css';
@@ -44,6 +45,7 @@ const App = (props: AppPropsWithLayout) => {
       <Head>
         <meta name='viewport' content='initial-scale=1, width=device-width' />
       </Head>
+      <DefaultSEO />
       <Analytics />
       <CssVarsProvider
         theme={cssVariableTheme}

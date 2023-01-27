@@ -1,19 +1,16 @@
 import { NextPage } from 'next';
-import Head from 'next/head';
 import Image from 'next/image';
 import { Text } from 'ui/components';
 
 import { Stack } from '@mui/material';
 
 import { InternalLink } from '../components/Link';
-import siteMeta from '../configs/siteMeta';
+import DefaultSEO from '../components/Seo/DefaultSeo';
 
 const NotFoundPage: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>{`Not Found | ${siteMeta.title}`}</title>
-      </Head>
+      <DefaultSEO title='Not Found' />
       <Stack
         sx={{
           width: '100%',

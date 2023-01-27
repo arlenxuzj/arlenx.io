@@ -1,12 +1,11 @@
 import { parseISO } from 'date-fns';
-import Head from 'next/head';
 import { Text } from 'ui/components';
 
 import { Box, Divider, Stack } from '@mui/material';
 
 import { Pill } from '../components/Pill';
+import DefaultSEO from '../components/Seo/DefaultSeo';
 import ContentWrapper from '../components/Wrapper/ContentWrapper';
-import siteMeta from '../configs/siteMeta';
 import { POST_CONTENT_WIDTH } from '../constants';
 import { formatDate } from '../utils/date';
 
@@ -31,11 +30,7 @@ export const PageLayout = ({
 }: PageLayoutProps) => {
   return (
     <>
-      <Head>
-        <title>
-          {headTitle ? `${headTitle} | ${siteMeta.title}` : siteMeta.title}
-        </title>
-      </Head>
+      <DefaultSEO title={headTitle} />
       <ContentWrapper main contentWidth={contentWidth || POST_CONTENT_WIDTH}>
         <Stack gridColumn={2} alignItems='flex-start' rowGap={8}>
           <Box
