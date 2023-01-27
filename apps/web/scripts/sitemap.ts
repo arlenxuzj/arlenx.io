@@ -57,7 +57,7 @@ const urlTags = paths
   .map(path => {
     return `
     <url>
-      <loc>${`${siteMeta.siteUrl}${path}`}</loc>
+      <loc>${`${siteMeta.url}${path}`}</loc>
     </url>
   `;
   })

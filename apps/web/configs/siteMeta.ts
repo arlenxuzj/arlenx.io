@@ -10,8 +10,8 @@ const siteMeta = {
     'Web',
     'Blog'
   ],
-  siteUrl: 'https://arlenx.io',
-  siteRepo: 'https://github.com/arlenxuzj/arlenx.io',
+  url: 'https://arlenx.io',
+  repo: 'https://github.com/arlenxuzj/arlenx.io',
   favicons: {
     svg: {
       light: '/favicons/favicon-light.svg',
