@@ -32,19 +32,35 @@ export default class MyDocument extends Document {
             type='font/woff2'
             crossOrigin='anonymous'
           />
-          <meta name='emotion-insertion-point' content='' />
           <link
             rel='icon'
-            type='image/png'
-            sizes='16x16'
-            href={siteMeta.siteLogo.dark}
+            className='js-site-favicon'
+            type='image/svg+xml'
+            href={siteMeta.favicons.svg.light}
           />
           <link
-            rel='icon'
-            type='image/png'
+            rel='alternate icon'
+            className='js-site-favicon'
             sizes='32x32'
-            href={siteMeta.siteLogo.dark}
+            type='image/png'
+            href={siteMeta.favicons.png.light}
           />
+          <link
+            rel='apple-touch-icon'
+            sizes='180x180'
+            href={siteMeta.favicons.appleTouchIcon}
+          />
+          <link
+            rel='mask-icon'
+            href={siteMeta.favicons.maskIcon}
+            color='#000000'
+          />
+          <link
+            rel='manifest'
+            href='/manifest.json'
+            crossOrigin='use-credentials'
+          />
+          <meta name='emotion-insertion-point' content='' />
           {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
           {(this.props as any).emotionStyleTags}
         </Head>
