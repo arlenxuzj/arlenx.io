@@ -22,7 +22,15 @@ const DefaultSEO = ({ title }: DefaultSEOProps) => {
           url: siteMeta.url,
           siteName: siteMeta.title,
           title: title ? `${title} | ${siteMeta.title}` : `${siteMeta.title}`,
-          description: siteMeta.description
+          description: siteMeta.description,
+          images: [
+            {
+              url: `${siteMeta.url}${siteMeta.image}`,
+              width: 1200,
+              height: 630,
+              alt: siteMeta.title
+            }
+          ]
         }}
       />
       <Head>
@@ -33,7 +41,7 @@ const DefaultSEO = ({ title }: DefaultSEOProps) => {
         url={siteMeta.url}
         title={siteMeta.title}
         description={siteMeta.description}
-        images={[]}
+        images={[`${siteMeta.url}${siteMeta.image}`]}
         datePublished={new Date().toISOString()}
         dateModified={new Date().toISOString()}
         authorName={siteMeta.author}

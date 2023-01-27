@@ -12,6 +12,7 @@ const siteMeta = {
   ],
   url: 'https://arlenx.io',
   repo: 'https://github.com/arlenxuzj/arlenx.io',
+  image: '/images/og-default-image.png',
   favicons: {
     svg: {
       light: '/favicons/favicon-light.svg',
