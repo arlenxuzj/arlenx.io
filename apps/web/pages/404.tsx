@@ -17,7 +17,6 @@ const NotFoundPage: NextPage = () => {
       <Stack
         sx={{
           width: '100%',
-          height: '100vh',
           justifyContent: 'center',
           alignItems: 'center',
           textAlign: 'center',
