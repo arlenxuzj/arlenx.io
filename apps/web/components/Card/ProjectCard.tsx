@@ -36,7 +36,7 @@ const ProjectCard = ({ project, repo }: ProjectCardProps) => {
         }}
       >
         <Image
-          src={imageUrl || '/images/project-image.png'}
+          src={imageUrl || '/images/project-default-image.png'}
           alt={title}
           fill
           priority
