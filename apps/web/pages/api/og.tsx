@@ -152,14 +152,14 @@ const handler = async (req: NextRequest) => {
               textAlign: 'center',
               alignItems: 'center',
               justifyContent: 'space-between',
-              bottom: 128,
-              fontSize: 26
+              bottom: 72,
+              fontSize: 32
             }}
           >
             <svg
               xmlns='http://www.w3.org/2000/svg'
-              width='40px'
-              height='40px'
+              width='48px'
+              height='48px'
               fill={targetBackgroundType.textColor}
               viewBox='0 0 32 32'
             >
