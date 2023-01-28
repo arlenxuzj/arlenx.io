@@ -1,4 +1,4 @@
-import { ArticleJsonLd, DefaultSeo } from 'next-seo';
+import { ArticleJsonLd, DefaultSeo as NextDefaultSeo } from 'next-seo';
 import Head from 'next/head';
 
 import siteMeta from '../../configs/siteMeta';
@@ -7,10 +7,10 @@ export type DefaultSEOProps = {
   title?: string;
 };
 
-const DefaultSEO = ({ title }: DefaultSEOProps) => {
+const DefaultSeo = ({ title }: DefaultSEOProps) => {
   return (
     <>
-      <DefaultSeo
+      <NextDefaultSeo
         title={title}
         titleTemplate={`%s | ${siteMeta.title}`}
         defaultTitle={siteMeta.title}
@@ -56,4 +56,4 @@ const DefaultSEO = ({ title }: DefaultSEOProps) => {
   );
 };
 
-export default DefaultSEO;
+export default DefaultSeo;

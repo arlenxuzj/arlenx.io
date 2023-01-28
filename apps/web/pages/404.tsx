@@ -5,12 +5,12 @@ import { Text } from 'ui/components';
 import { Stack } from '@mui/material';
 
 import { InternalLink } from '../components/Link';
-import DefaultSEO from '../components/Seo/DefaultSeo';
+import DefaultSeo from '../components/Seo/DefaultSeo';
 
 const NotFoundPage: NextPage = () => {
   return (
     <>
-      <DefaultSEO title='Not Found' />
+      <DefaultSeo title='Not Found' />
       <Stack
         sx={{
           width: '100%',

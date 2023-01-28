@@ -12,7 +12,7 @@ import type {} from '@mui/material/themeCssVarsAugmentation';
 
 import Analytics from '../components/Analytics';
 // import '../lib/prism/treeview.css';
-import DefaultSEO from '../components/Seo/DefaultSeo';
+import DefaultSeo from '../components/Seo/DefaultSeo';
 import LayoutWrapper from '../components/Wrapper/LayoutWrapper';
 import { ThemeProvider } from '../providers/ThemeProvider';
 import '../styles/font.css';
@@ -45,7 +45,7 @@ const App = (props: AppPropsWithLayout) => {
       <Head>
         <meta name='viewport' content='initial-scale=1, width=device-width' />
       </Head>
-      <DefaultSEO />
+      <DefaultSeo />
       <Analytics />
       <CssVarsProvider
         theme={cssVariableTheme}

@@ -4,7 +4,7 @@ import { Text } from 'ui/components';
 import { Box, Divider, Stack } from '@mui/material';
 
 import { Pill } from '../components/Pill';
-import DefaultSEO from '../components/Seo/DefaultSeo';
+import DefaultSeo from '../components/Seo/DefaultSeo';
 import ContentWrapper from '../components/Wrapper/ContentWrapper';
 import { POST_CONTENT_WIDTH } from '../constants';
 import { formatDate } from '../utils/date';
@@ -30,7 +30,7 @@ export const PageLayout = ({
 }: PageLayoutProps) => {
   return (
     <>
-      <DefaultSEO title={headTitle} />
+      <DefaultSeo title={headTitle} />
       <ContentWrapper main contentWidth={contentWidth || POST_CONTENT_WIDTH}>
         <Stack gridColumn={2} alignItems='flex-start' rowGap={8}>
           <Box
