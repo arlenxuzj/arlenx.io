@@ -116,7 +116,7 @@ export const getStaticProps: GetStaticProps<PostsPageProps> = async () => {
 PostsPage.getLayout = page => {
   return (
     <PageLayout
-      headTitle='All Posts'
+      headTitle='Posts'
       description='I write about web development, programming, and other topics'
       contentWidth={DEFAULT_CONTENT_WIDTH}
     >
