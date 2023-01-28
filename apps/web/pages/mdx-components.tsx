@@ -16,7 +16,11 @@ const MDXComponentsPage: NextPage<MDXComponentsPageProps> = ({ page }) => {
   useHashFragment(-1 * SCROLL_OFFSET);
 
   return (
-    <MDXPageLayout page={page} contentWidth={DEFAULT_CONTENT_WIDTH}>
+    <MDXPageLayout
+      page={page}
+      contentWidth={DEFAULT_CONTENT_WIDTH}
+      path='/mdx-components'
+    >
       <MDXContent components={MDXComponents} />
     </MDXPageLayout>
   );

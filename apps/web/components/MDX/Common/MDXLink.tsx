@@ -89,16 +89,12 @@ const MDXLink = (props: MDXLinkProps) => {
     );
   }
 
-  console.log(children);
-
   // External link with attributes
   // ::referrer ::noreferrer ::follow ::nofollow
   let noReferrer = true;
   let noFollow = false;
 
   const externalLinkWithAttributes = (children as string).split('::');
-
-  console.log(externalLinkWithAttributes);
 
   if (externalLinkWithAttributes.includes('referrer')) {
     noReferrer = false;

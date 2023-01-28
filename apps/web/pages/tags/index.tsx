@@ -119,7 +119,11 @@ export const getStaticProps: GetStaticProps<TagsPageProps> = async () => {
 
 TagsPage.getLayout = page => {
   return (
-    <PageLayout headTitle='Tags' description='Tags for posts and snippets'>
+    <PageLayout
+      headTitle='Tags'
+      description='Tags for posts and snippets'
+      path='/tags'
+    >
       {page}
     </PageLayout>
   );

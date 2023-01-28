@@ -23,6 +23,7 @@ const TagPage: NextPage<TagPageProps> = ({ tag, posts, snippets }) => {
       title={`Tag: #${tag}`}
       description={`Posts and snippets tagged with ${tag}`}
       contentWidth={DEFAULT_CONTENT_WIDTH}
+      path={`/tags/${tag}`}
     >
       {posts.length ? (
         <Box

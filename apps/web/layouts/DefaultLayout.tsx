@@ -1,6 +1,6 @@
 import { Stack } from '@mui/material';
 
-import DefaultSEO from '../components/Seo/DefaultSeo';
+import DefaultSeo from '../components/Seo/DefaultSeo';
 import ContentWrapper from '../components/Wrapper/ContentWrapper';
 
 export type DefaultLayoutProps = {
@@ -11,7 +11,7 @@ export type DefaultLayoutProps = {
 const DefaultLayout = ({ headTitle, children }: DefaultLayoutProps) => {
   return (
     <>
-      <DefaultSEO title={headTitle} />
+      <DefaultSeo title={headTitle} />
       <ContentWrapper main>
         <Stack gridColumn={2} alignItems='flex-start' rowGap={8}>
           {children}

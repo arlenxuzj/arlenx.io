@@ -47,6 +47,7 @@ SnippetsPage.getLayout = page => {
   return (
     <PageLayout
       headTitle='Snippets'
+      path='/snippets'
       description='Useful code snippets collected by me'
       contentWidth={DEFAULT_CONTENT_WIDTH}
     >

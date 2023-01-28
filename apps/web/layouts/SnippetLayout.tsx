@@ -1,6 +1,5 @@
 import { Snippet } from 'contentlayer/generated';
 import { parseISO } from 'date-fns';
-import Head from 'next/head';
 import { Text } from 'ui/components';
 
 import { Box, Divider, Stack } from '@mui/material';
@@ -13,6 +12,7 @@ import { ExternalLink } from '../components/Link';
 import BackHomeLink from '../components/Link/BackHomeLink';
 import { MDXStyledArticle } from '../components/MDX';
 import { Pill } from '../components/Pill';
+import { Seo } from '../components/Seo';
 import TableOfContent, {
   Heading
 } from '../components/TableOfContent/TableOfContent';
@@ -37,13 +37,15 @@ export const SnippetLayout = ({
 }: SnippetLayoutProps) => {
   return (
     <>
-      <Head>
-        <title>
-          {snippet.title
-            ? `${snippet.title} | ${siteMeta.title}`
-            : siteMeta.title}
-        </title>
-      </Head>
+      <Seo
+        title={snippet.title}
+        description={snippet.description}
+        path={`/snippets/${snippet.slug}`}
+        createdAt={snippet.createdAt}
+        updatedAt={snippet.updatedAt}
+        slug={snippet.slug}
+        tags={snippet.tags}
+      />
       <ContentWrapper main contentWidth={POST_CONTENT_WIDTH}>
         <Stack
           gridColumn={1}

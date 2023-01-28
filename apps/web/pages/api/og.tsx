@@ -80,8 +80,8 @@ const handler = async (req: NextRequest) => {
           >
             <svg
               xmlns='http://www.w3.org/2000/svg'
-              width='192px'
-              height='192px'
+              width='128px'
+              height='128px'
               fill={darkTextColor}
               viewBox='0 0 32 32'
             >
@@ -101,10 +101,10 @@ const handler = async (req: NextRequest) => {
       );
     }
 
-    const hasBackground = searchParams.has('background');
-    const background = hasBackground
+    const hasBackgroundType = searchParams.has('backgroundType');
+    const targetBackgroundType = hasBackgroundType
       ? backgroundType[
-          searchParams.get('background')! as keyof typeof backgroundType
+          searchParams.get('backgroundType')! as keyof typeof backgroundType
         ] || backgroundType.default
       : backgroundType.default;
 
@@ -114,8 +114,8 @@ const handler = async (req: NextRequest) => {
           style={{
             fontFamily: 'Inter',
             fontWeight: 700,
-            color: background.textColor,
-            background: background.backgroundColor,
+            color: targetBackgroundType.textColor,
+            background: targetBackgroundType.backgroundColor,
             width: '100%',
             height: '100%',
             display: 'flex',
@@ -152,15 +152,15 @@ const handler = async (req: NextRequest) => {
               textAlign: 'center',
               alignItems: 'center',
               justifyContent: 'space-between',
-              bottom: 128,
-              fontSize: 26
+              bottom: 72,
+              fontSize: 32
             }}
           >
             <svg
               xmlns='http://www.w3.org/2000/svg'
-              width='40px'
-              height='40px'
-              fill={background.textColor}
+              width='48px'
+              height='48px'
+              fill={targetBackgroundType.textColor}
               viewBox='0 0 32 32'
             >
               <path d='m.34.31C.15.48,0,.75,0,.9,0,1.25,22.54,31.24,23.13,31.68c.34.26.56.3,1.76.3,1.05,0,1.42-.05,1.62-.21.22-.2.22-.25-.05-.63C25.04,29.13,3.43.54,3.14.3,2.83.06,2.6.01,1.72.01c-.9,0-1.1.04-1.38.3Z' />

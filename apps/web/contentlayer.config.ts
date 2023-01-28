@@ -57,6 +57,11 @@ export const Post = defineDocumentType(() => ({
       type: 'boolean',
       description: 'Whether the post is a work in progress',
       required: false
+    },
+    backgroundType: {
+      type: 'string',
+      description: 'Open Graph background type',
+      required: false
     }
   },
   computedFields: {
@@ -118,6 +123,11 @@ export const Snippet = defineDocumentType(() => ({
     wip: {
       type: 'boolean',
       description: 'Whether the snippet is a work in progress',
+      required: false
+    },
+    backgroundType: {
+      type: 'string',
+      description: 'Open Graph background type',
       required: false
     }
   },

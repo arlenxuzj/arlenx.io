@@ -29,7 +29,11 @@ const AboutPage: NextPage<AboutPageProps> = ({
   useHashFragment(-1 * SCROLL_OFFSET);
 
   return (
-    <MDXPageLayout page={page} contentWidth={DEFAULT_CONTENT_WIDTH}>
+    <MDXPageLayout
+      page={page}
+      contentWidth={DEFAULT_CONTENT_WIDTH}
+      path='/about'
+    >
       <MDXContent
         components={{
           ...MDXComponents,
