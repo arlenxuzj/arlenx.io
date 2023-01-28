@@ -35,17 +35,21 @@ blogContent.forEach(async content => {
 
   const writer = fs.createWriteStream(ogImagePath);
 
-  const response = await axios.get(`${siteMeta.url}/api/og`, {
-    params: {
-      title: data.title,
-      backgroundType
-    },
-    responseType: 'stream'
-  });
+  try {
+    const response = await axios.get(`${siteMeta.url}/api/og`, {
+      params: {
+        title: data.title,
+        backgroundType
+      },
+      responseType: 'stream'
+    });
 
-  const stream = response.data.pipe(writer);
+    const stream = response.data.pipe(writer);
 
-  stream.on('finish', () => {
-    console.log(`Generated ${slug}.png in public/images/og`);
-  });
+    stream.on('finish', () => {
+      console.log(`Generated ${slug}.png in public/images/og`);
+    });
+  } catch (error) {
+    throw new Error((error as Error).message);
+  }
 });
