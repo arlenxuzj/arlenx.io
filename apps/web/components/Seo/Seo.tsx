@@ -73,6 +73,10 @@ const Seo = ({
         <meta name='googlebot' content='index,follow' />
         <meta name='author' content={siteMeta.author} />
         {tags && <meta name='keywords' content={tags.join(',')} />}
+        <meta name='twitter:title' content={seo.title} />
+        <meta name='twitter:description' content={seo.description} />
+        <meta name='twitter:image' content={seo.imageUrl} />
+        <meta name='twitter:image:alt' content={seo.title} />
       </Head>
       <ArticleJsonLd
         type='BlogPosting'
