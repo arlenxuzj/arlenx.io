@@ -32,9 +32,16 @@ const DefaultSEO = ({ title }: DefaultSEOProps) => {
             }
           ]
         }}
+        twitter={{
+          handle: siteMeta.twitter,
+          site: siteMeta.twitter,
+          cardType: 'summary_large_image'
+        }}
       />
       <Head>
         <meta name='googlebot' content='index,follow' />
+        <meta name='author' content={siteMeta.author} />
+        <meta name='keywords' content={siteMeta.keywords.join(',')} />
       </Head>
       <ArticleJsonLd
         type='Blog'

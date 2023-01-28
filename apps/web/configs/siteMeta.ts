@@ -1,6 +1,7 @@
 const siteMeta = {
   title: "ArlenX's Blog",
-  description: "ArlenX's Blog",
+  description:
+    "Hi, I'm Zhen Jun Xu, and this is my blog. Here, I write about my journey as a software engineer, and share everything I've learned along the way.",
   keywords: [
     'React',
     'TypeScript',
@@ -30,6 +31,7 @@ const siteMeta = {
   fullName: 'Zhen Jun Xu',
   aliasName: 'Arlen',
   email: 'me@arlenx.dev',
+  twitter: '@arlenxuzj',
   findMe: {
     email: 'me@arlenx.dev',
     github: 'https://github.com/arlenxuzj',
