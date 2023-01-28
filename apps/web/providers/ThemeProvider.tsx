@@ -70,10 +70,6 @@ const ThemeProvider = ({ children }: ThemeProviderProps) => {
     setMode(mode === 'dark' ? 'light' : 'dark');
   };
 
-  if (!mounted) {
-    return null;
-  }
-
   return (
     <ThemeContext.Provider value={{ toggleTheme }}>
       {children}
