@@ -1,6 +1,5 @@
 import { Post } from 'contentlayer/generated';
 import { parseISO } from 'date-fns';
-import Head from 'next/head';
 import { Text } from 'ui/components';
 
 import { Box, Divider, Stack } from '@mui/material';
@@ -13,6 +12,7 @@ import { ExternalLink } from '../components/Link';
 import BackHomeLink from '../components/Link/BackHomeLink';
 import { MDXStyledArticle } from '../components/MDX';
 import { Pill } from '../components/Pill';
+import { Seo } from '../components/Seo';
 import TableOfContent, {
   Heading
 } from '../components/TableOfContent/TableOfContent';
@@ -37,11 +37,15 @@ const PostLayout = ({
 }: PostLayoutProps) => {
   return (
     <>
-      <Head>
-        <title>
-          {post.title ? `${post.title} | ${siteMeta.title}` : siteMeta.title}
-        </title>
-      </Head>
+      <Seo
+        title={post.title}
+        description={post.description}
+        path={`/posts/${post.slug}`}
+        createdAt={post.createdAt}
+        updatedAt={post.updatedAt}
+        slug={post.slug}
+        tags={post.tags}
+      />
       <ContentWrapper main contentWidth={POST_CONTENT_WIDTH}>
         <Stack
           gridColumn={1}

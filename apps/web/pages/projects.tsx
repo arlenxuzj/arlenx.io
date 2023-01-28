@@ -68,6 +68,7 @@ ProjectsPage.getLayout = page => {
     <PageLayout
       headTitle='Projects'
       description='My side projects ans stuff I built with others'
+      path='/projects'
       contentWidth={DEFAULT_CONTENT_WIDTH}
     >
       {page}

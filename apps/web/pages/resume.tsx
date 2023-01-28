@@ -16,7 +16,11 @@ const ResumePage: NextPage<ResumePageProps> = ({ page }) => {
   useHashFragment(-1 * SCROLL_OFFSET);
 
   return (
-    <MDXPageLayout page={page} contentWidth={DEFAULT_CONTENT_WIDTH}>
+    <MDXPageLayout
+      page={page}
+      contentWidth={DEFAULT_CONTENT_WIDTH}
+      path='/resume'
+    >
       <MDXContent components={MDXComponents} />
     </MDXPageLayout>
   );
