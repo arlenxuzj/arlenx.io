@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "sitemap": "tsx scripts/sitemap.ts",
-    "postbuild": "npm run sitemap"
+    "og-image": "tsx scripts/og-image.ts",
+    "postbuild": "npm run sitemap && npm run og-image"
   },
   "dependencies": {
     "@emotion/cache": "^11.10.5",
