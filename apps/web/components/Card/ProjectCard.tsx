@@ -1,7 +1,10 @@
+/* eslint-disable @next/next/no-img-element */
 import Image from 'next/image';
+import { useState } from 'react';
 import { Text } from 'ui/components';
 
-import { Box, Card, CardContent, Stack } from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
+import { Box, Card, CardContent, Modal, Stack } from '@mui/material';
 
 import { Project } from '../../configs/projectsData';
 import { DEFAULT_CONTENT_WIDTH } from '../../constants';
@@ -17,116 +20,170 @@ export type ProjectCardProps = {
 const ProjectCard = ({ project, repo }: ProjectCardProps) => {
   const { title, description, techStack, imageUrl, url } = project;
   const href = repo?.html_url || url;
+  const [open, setOpen] = useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   return (
-    <Card
-      variant='outlined'
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        maxWidth: DEFAULT_CONTENT_WIDTH / 2,
-        backgroundColor: 'background.default'
-      }}
-    >
-      <Box
-        sx={{
-          position: 'relative',
-          width: '100%',
-          height: 240
-        }}
-      >
-        <Image
-          src={imageUrl || '/images/project-default-image.png'}
-          alt={title}
-          fill
-          priority
-          style={{
-            objectFit: 'cover'
-          }}
-        />
-      </Box>
-      <CardContent
+    <>
+      <Card
+        variant='outlined'
         sx={{
           display: 'flex',
           flexDirection: 'column',
-          flexGrow: 1,
+          maxWidth: DEFAULT_CONTENT_WIDTH / 2,
           backgroundColor: 'background.default'
         }}
       >
-        <Stack flexGrow={1}>
-          <Text
-            component='h3'
-            color='text.primary'
-            fontWeight={600}
-            size='2xl'
-            sx={{
-              mb: 2
-            }}
-          >
-            {href ? (
-              <ExternalLink
-                color='inherit'
-                underline='none'
-                href={href}
-                sx={{
-                  fontWeight: 600
-                }}
-              >
-                {title}
-              </ExternalLink>
-            ) : (
-              title
-            )}
-          </Text>
-          <Text
-            color='text.secondary'
-            sx={{
-              mb: 1
-            }}
-          >
-            {description}
-          </Text>
-          <Text color='text.secondary'>
-            {'Tech Stack: '}
-            <Text component='span' fontWeight={600}>
-              {techStack.join(', ')}
-            </Text>
-          </Text>
-        </Stack>
         <Box
           sx={{
-            mt: 3
+            position: 'relative',
+            width: '100%',
+            height: 240,
+            cursor: 'zoom-in'
+          }}
+          onClick={handleClick}
+        >
+          <Image
+            src={imageUrl || '/images/project-default-image.png'}
+            alt={title}
+            fill
+            priority
+            style={{
+              objectFit: 'cover'
+            }}
+          />
+        </Box>
+        <CardContent
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            flexGrow: 1,
+            backgroundColor: 'background.default'
           }}
         >
-          {repo ? (
-            <GithubRepo repo={repo} />
-          ) : (
-            <Stack
-              direction='row'
-              justifyContent='flex-start'
-              alignItems='center'
+          <Stack flexGrow={1}>
+            <Text
+              component='h3'
+              color='text.primary'
+              fontWeight={600}
+              size='2xl'
+              sx={{
+                mb: 2
+              }}
             >
-              <ExternalLink
-                href={url}
-                noReferrer={false}
-                underline='none'
-                color='text.primary'
-                className='arrow arrow-right'
-                fontSize={16}
-                sx={{
-                  ml: 0.5,
-                  '&:hover': {
-                    color: 'primary.main'
-                  }
-                }}
+              {href ? (
+                <ExternalLink
+                  color='inherit'
+                  underline='none'
+                  href={href}
+                  sx={{
+                    fontWeight: 600
+                  }}
+                >
+                  {title}
+                </ExternalLink>
+              ) : (
+                title
+              )}
+            </Text>
+            <Text
+              color='text.secondary'
+              sx={{
+                mb: 1
+              }}
+            >
+              {description}
+            </Text>
+            <Text color='text.secondary'>
+              {'Tech Stack: '}
+              <Text component='span' fontWeight={600}>
+                {techStack.join(', ')}
+              </Text>
+            </Text>
+          </Stack>
+          <Box
+            sx={{
+              mt: 3
+            }}
+          >
+            {repo ? (
+              <GithubRepo repo={repo} />
+            ) : (
+              <Stack
+                direction='row'
+                justifyContent='flex-start'
+                alignItems='center'
               >
-                Learn More
-              </ExternalLink>
-            </Stack>
-          )}
+                <ExternalLink
+                  href={url}
+                  noReferrer={false}
+                  underline='none'
+                  color='text.primary'
+                  className='arrow arrow-right'
+                  fontSize={16}
+                  sx={{
+                    ml: 0.5,
+                    '&:hover': {
+                      color: 'primary.main'
+                    }
+                  }}
+                >
+                  Learn More
+                </ExternalLink>
+              </Stack>
+            )}
+          </Box>
+        </CardContent>
+      </Card>
+      <Modal open={open} onClose={handleClose} disableAutoFocus>
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            width: '100%',
+            height: '100%',
+            cursor: 'pointer'
+          }}
+          onClick={handleClose}
+        >
+          <Box
+            sx={{
+              position: 'absolute',
+              display: 'flex',
+              width: '100%',
+              top: 0,
+              justifyContent: 'flex-end'
+            }}
+          >
+            <Box
+              sx={{
+                p: 2
+              }}
+            >
+              <CloseIcon fontSize='large' />
+            </Box>
+          </Box>
+          <img
+            src={imageUrl || '/images/project-default-image.png'}
+            alt={title}
+            style={{
+              maxWidth: '80vw',
+              height: 'auto',
+              maxHeight: '80vh',
+              cursor: 'zoom-out'
+            }}
+          />
         </Box>
-      </CardContent>
-    </Card>
+      </Modal>
+    </>
   );
 };
 export default ProjectCard;
