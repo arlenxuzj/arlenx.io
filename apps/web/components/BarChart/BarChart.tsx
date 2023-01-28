@@ -39,7 +39,7 @@ export const Bar = ({ color, score, label, value }: BarProps) => {
       </Text>
       <Box
         sx={{
-          flexBasis: '50%'
+          flexBasis: '45%'
         }}
       >
         <Box
@@ -56,7 +56,7 @@ export const Bar = ({ color, score, label, value }: BarProps) => {
         color='text.secondary'
         fontWeight={400}
         sx={{
-          flexBasis: '20%'
+          flexBasis: '25%'
         }}
       >
         {parseWakaTimeText(value)}
