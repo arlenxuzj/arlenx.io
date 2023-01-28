@@ -20,7 +20,6 @@ const DefaultSEO = ({ title }: DefaultSEOProps) => {
           type: 'website',
           locale: 'en_US',
           url: siteMeta.url,
-          siteName: siteMeta.title,
           title: title ? `${title} | ${siteMeta.title}` : `${siteMeta.title}`,
           description: siteMeta.description,
           images: [
