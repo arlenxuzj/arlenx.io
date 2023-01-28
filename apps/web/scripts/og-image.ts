@@ -16,6 +16,10 @@ const blogContent = globbySync(['contents/**/*.mdx', '!contents/pages'], {
   return !data.wip;
 });
 
+if (!fs.existsSync('public/images/og')) {
+  fs.mkdirSync('public/images/og', { recursive: true });
+}
+
 blogContent.forEach(async content => {
   const file = fs.readFileSync(content, 'utf-8');
   const { data } = matter(file);
