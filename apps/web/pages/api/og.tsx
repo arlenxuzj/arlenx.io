@@ -80,8 +80,8 @@ const handler = async (req: NextRequest) => {
           >
             <svg
               xmlns='http://www.w3.org/2000/svg'
-              width='192px'
-              height='192px'
+              width='128px'
+              height='128px'
               fill={darkTextColor}
               viewBox='0 0 32 32'
             >
