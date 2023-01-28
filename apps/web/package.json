@@ -9,7 +9,7 @@
     "lint": "next lint",
     "sitemap": "tsx scripts/sitemap.ts",
     "og-image": "tsx scripts/og-image.ts",
-    "postbuild": "npm run sitemap && npm run og-image"
+    "scripts": "npm run sitemap && npm run og-image"
   },
   "dependencies": {
     "@emotion/cache": "^11.10.5",
