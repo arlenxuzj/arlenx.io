@@ -14,7 +14,7 @@ This site is hosted on [Vercel](https://vercel.com), built with [Next.js](https:
 - View count by [Prisma](https://www.prisma.io) and [MongoDB](https://www.mongodb.com)
 - Comments by [Giscus](https://giscus.app)
 - Coding stats by [Wakatime](https://wakatime.com) API
-- Site analytics by [Vercel Analytics](https://vercel.com/analytics), [Google Analytics](https://analytics.google.com), or [Umami](https://umami.is)
+- Site analytics by [Vercel Analytics](https://vercel.com/analytics), [Google Analytics](https://analytics.google.com), and [Umami](https://umami.is)
 - SEO by [Next SEO](https://github.com/garmeeh/next-seo)
 - Open graph image generator API by [@vercel/og](https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation) library
 
