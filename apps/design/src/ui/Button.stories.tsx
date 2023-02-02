@@ -5,7 +5,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import SendIcon from '@mui/icons-material/Send';
 
 const meta: Meta<typeof Button> = {
-  title: 'Components/Button',
+  title: 'UI/Button',
   component: Button,
   parameters: {
     controls: {
