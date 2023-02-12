@@ -18,7 +18,7 @@
     "start": "npm run start:web",
     "db:generate": "turbo db:generate",
     "db:push": "turbo db:push",
-    "web:scripts": "npm run scripts --prefix apps/web",
+    "scripts:web": "npm run scripts --prefix apps/web",
     "prepare": "is-ci || husky install",
     "commit": "cz"
   },
