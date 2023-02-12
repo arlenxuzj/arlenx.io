@@ -39,6 +39,10 @@
   </url>
 
   <url>
+    <loc>https://arlenx.io/snippets/cloud-run-script</loc>
+  </url>
+
+  <url>
     <loc>https://arlenx.io/snippets/wait-function</loc>
   </url>
 
@@ -51,6 +55,10 @@
   </url>
 
   <url>
+    <loc>https://arlenx.io/tags/cloud-run</loc>
+  </url>
+
+  <url>
     <loc>https://arlenx.io/tags/deployment</loc>
   </url>
 
@@ -59,7 +67,15 @@
   </url>
 
   <url>
+    <loc>https://arlenx.io/tags/gcp</loc>
+  </url>
+
+  <url>
     <loc>https://arlenx.io/tags/heroku</loc>
+  </url>
+
+  <url>
+    <loc>https://arlenx.io/tags/postman</loc>
   </url>
 
   <url>
