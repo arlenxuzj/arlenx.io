@@ -1,9 +1,7 @@
-// import { inject } from '@vercel/analytics';
+import { inject } from '@vercel/analytics';
 
-// import { webVitals } from './vitals';
+import { webVitals } from './vitals';
 
-// inject();
+inject();
 
-// webVitals();
-
-export {};
+webVitals();
